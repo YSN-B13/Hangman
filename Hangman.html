@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Hangman.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Hangman Game</h1>
+        <svg id="hangman-svg" viewBox="0 0 200 250">
+            <!-- Base -->
+            <line x1="20" y1="230" x2="180" y2="230" stroke="#34495e" stroke-width="4"/>
+            <!-- Vertical pole -->
+            <line x1="40" y1="230" x2="40" y2="20" stroke="#34495e" stroke-width="4"/>
+            <!-- Horizontal beam -->
+            <line x1="40" y1="20" x2="140" y2="20" stroke="#34495e" stroke-width="4"/>
+            <!-- Rope -->
+            <line x1="140" y1="20" x2="140" y2="50" stroke="#34495e" stroke-width="4"/>
+            <!-- Head -->
+            <circle id="head" cx="140" cy="70" r="20" fill="none" stroke="#34495e" stroke-width="4" opacity="0"/>
+            <!-- Body -->
+            <line id="body" x1="140" y1="90" x2="140" y2="150" stroke="#34495e" stroke-width="4" opacity="0"/>
+            <!-- Left Arm -->
+            <line id="left-arm" x1="140" y1="100" x2="110" y2="130" stroke="#34495e" stroke-width="4" opacity="0"/>
+            <!-- Right Arm -->
+            <line id="right-arm" x1="140" y1="100" x2="170" y2="130" stroke="#34495e" stroke-width="4" opacity="0"/>
+            <!-- Left Leg -->
+            <line id="left-leg" x1="140" y1="150" x2="110" y2="190" stroke="#34495e" stroke-width="4" opacity="0"/>
+            <!-- Right Leg -->
+            <line id="right-leg" x1="140" y1="150" x2="170" y2="190" stroke="#34495e" stroke-width="4" opacity="0"/>
+        </svg>
+        <div id="word-display"></div>
+        <div id="used-letters">Used letters: </div>
+        <input type="text" id="guess-input" maxlength="1" autocomplete="off">
+        <button id="guess-button" class="button">Guess</button>
+        <div id="message"></div>
+        <button id="restart-button" class="button">Play Again</button>
+    </div>
+    <script src="Hangman.js"></script>
+</body>
+</html>

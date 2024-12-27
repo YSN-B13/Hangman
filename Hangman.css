@@ -1,0 +1,123 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #ecf0f1;
+    --text-color: #34495e;
+    --error-color: #e74c3c;
+    --warning-color: #f39c12;
+    --success-color: #27ae60;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.game-container {
+    text-align: center;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 500px;
+    width: 90%;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+#hangman-svg {
+    width: 200px;
+    height: 250px;
+    margin-bottom: 1.5rem;
+}
+
+#word-display {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5rem;
+}
+
+#used-letters {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+#guess-input {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    width: 2rem;
+    text-align: center;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    margin-right: 0.5rem;
+}
+
+.button {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #2980b9;
+}
+
+#restart-button {
+    background-color: var(--secondary-color);
+    display: none;
+    margin-top: 1rem;
+}
+
+#restart-button:hover {
+    background-color: #27ae60;
+}
+
+#message {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    min-height: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.letter {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.letter.revealed {
+    transform: scale(1.2);
+    color: var(--secondary-color);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+.correct { background-color: var(--success-color); color: white; }
+.wrong { background-color: var(--error-color); color: white; }
+.warning { background-color: var(--warning-color); color: white; }
+.game-over { background-color: var(--error-color); color: white; }
+.win { background-color: var(--success-color); color: white; }
